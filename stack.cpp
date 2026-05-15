@@ -39,14 +39,15 @@ public:
 
     void pop()
      {
+        Node *temp = top;
         if (isEmpty())
         {
             cout << "Stack is empty." << endl;
+            return;
         }
-
-        Node *temp = top;
+        cout << "Popped value: " << temp->data << endl;
         top = top->next;
-        cout << "Popped value: " << top->data << endl;
+        delete temp;
     }
 
     void peek()
@@ -66,5 +67,11 @@ public:
             cout << endl;
         }
     }
+
+    bool isEmpty()
+    {
+        return top == NULL;
+    }
+};
 
 
